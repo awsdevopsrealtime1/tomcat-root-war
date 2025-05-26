@@ -44,10 +44,10 @@
 <hr>
 
 <div>
-    <h4>Machine Name Latest : <span><%=  hostName %></span></h4>
-    <h4>IP Address Latest: <span><%=  ipAddr %></span></h4>
-    <h4>JVM Name Latest: <span><%=  serverName %></span></h4>
-    <h4> Date & Time Latest: <span> <%= Dtime %></h4>
+    <h4>Machine Name Old : <span><%=  hostName %></span></h4>
+    <h4>IP Address Old: <span><%=  ipAddr %></span></h4>
+    <h4>JVM Name Old: <span><%=  serverName %></span></h4>
+    <h4> Date & Time Old: <span> <%= Dtime %></h4>
 </div>
 
 <h4>HTTP Request URL : <span><%= request.getRequestURL() %></span></h4>
