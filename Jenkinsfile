@@ -19,13 +19,13 @@ pipeline {
         stage(' Tomcat Deploy ') {
             steps {
                 echo 'Tocat Deployment'
-                sh 'scp target/ROOT.war ubuntu@13.232.186.162:/opt/tomcat/webapps'
+                sh 'scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null target/ROOT.war ubuntu@13.232.186.162:/opt/tomcat/webapps'
             }
         }
         stage(' Tomcat Deployment to QA env ') {
             steps {
                 echo 'Tocat Deployment'
-                sh 'scp target/ROOT.war ubuntu@3.108.54.16:/opt/tomcat/webapps'
+                sh 'scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null target/ROOT.war ubuntu@3.108.54.16:/opt/tomcat/webapps'
             }
         }
     }
