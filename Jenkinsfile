@@ -20,7 +20,7 @@ pipeline {
                 agent { label "${params.AGENT_LABLE}" }
             steps {
                 echo 'Tocat Deployment to'
-                sh 'scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null target/ROOT.war ubuntu@$"{params.IP_Address}":/opt/tomcat/webapps'
+                sh 'scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null target/ROOT.war ubuntu@"${params.IP_Address}":/opt/tomcat/webapps'
             }
         }
     }
