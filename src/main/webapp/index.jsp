@@ -44,7 +44,7 @@
 <hr>
 
 <div>
-    <h4>Machine Name Old : <span><%=  hostName %></span></h4>
+    <h4>Machine Name Latest : <span><%=  hostName %></span></h4>
     <h4>IP Address Old: <span><%=  ipAddr %></span></h4>
     <h4>JVM Name Old: <span><%=  serverName %></span></h4>
     <h4> Date & Time Old: <span> <%= Dtime %></h4>
