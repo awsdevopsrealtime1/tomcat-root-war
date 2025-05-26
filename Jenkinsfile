@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'Dev_agent' }
+        agent { label 'master' }
     tools { 
         maven 'Maven'
     }
@@ -16,16 +16,18 @@ pipeline {
                 sh 'mvn clean install'
             }
         }
-        stage(' Tomcat Deploy ') {
+        stage(' Tomcat Deployment to Dev env ') {
+                agent { label '$AGENT_LABLE' }
             steps {
                 echo 'Tocat Deployment'
-                sh 'scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null target/ROOT.war ubuntu@13.232.186.162:/opt/tomcat/webapps'
+                sh 'scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null target/ROOT.war ubuntu@$IP_Address:/opt/tomcat/webapps'
             }
         }
         stage(' Tomcat Deployment to QA env ') {
+                agent { label '$AGENT_LABLE' }
             steps {
                 echo 'Tocat Deployment'
-                sh 'scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null target/ROOT.war ubuntu@3.108.54.16:/opt/tomcat/webapps'
+                sh 'scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null target/ROOT.war ubuntu@$IP_Address:/opt/tomcat/webapps'
             }
         }
     }
