@@ -16,18 +16,11 @@ pipeline {
                 sh 'mvn clean install'
             }
         }
-        stage(' Tomcat Deployment to Dev env ') {
-                agent { label '$AGENT_LABLE' }
+        stage(' Tomcat Deployment ') {
+                agent { label '${params.AGENT_LABLE}' }
             steps {
-                echo 'Tocat Deployment'
-                sh 'scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null target/ROOT.war ubuntu@$IP_Address:/opt/tomcat/webapps'
-            }
-        }
-        stage(' Tomcat Deployment to QA env ') {
-                agent { label '$AGENT_LABLE' }
-            steps {
-                echo 'Tocat Deployment'
-                sh 'scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null target/ROOT.war ubuntu@$IP_Address:/opt/tomcat/webapps'
+                echo 'Tocat Deployment to'
+                sh 'scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null target/ROOT.war ubuntu@${params.IP_Address}:/opt/tomcat/webapps'
             }
         }
     }
