@@ -19,7 +19,7 @@ pipeline {
             steps {
                 script {
                 
-                    git_checkout.git_checkout("git@github.com:srinath730/tomcat-root-war.git", "master")
+                    git_checkout("git@github.com:srinath730/tomcat-root-war.git", "master")
 
                 }
             }
