@@ -1,9 +1,20 @@
+@Library('my_library')
 pipeline {
         agent { label 'master' }
     tools { 
         maven 'Maven'
     }
     stages {
+
+        stage('hello world') {
+            steps {
+                script {
+                
+                    hello_World('srinath')
+                }
+            
+            }
+        }
         stage('git checkout') {
             steps {
                 echo 'fetching git code'
