@@ -17,8 +17,11 @@ pipeline {
         }
         stage('git checkout') {
             steps {
-                echo 'fetching git code'
-                git poll: false, url: 'git@github.com:srinath730/tomcat-root-war.git'
+                script {
+                
+                    git_checkout.git_checkout("git@github.com:srinath730/tomcat-root-war.git", "master")
+
+                }
             }
         }
         stage(' Maven Build') {
