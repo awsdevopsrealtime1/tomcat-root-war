@@ -26,6 +26,7 @@ public class InfoServlet extends HttpServlet {
           try {
             RequestDispatcher view = request.getRequestDispatcher("index.jsp");
             view.forward(request,response);
+              view.forward(request,response);
                     
         } finally {
             out.close();
