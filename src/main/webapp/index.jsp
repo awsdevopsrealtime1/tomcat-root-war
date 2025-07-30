@@ -44,8 +44,8 @@
 <hr>
 
 <div>
-    <h4>Machine Name Rajesh : <span><%=  hostName %></span></h4>
-    <h4>IP Address Rajesh: <span><%=  ipAddr %></span></h4>
+    <h4>Machine Name<span><%=  hostName %></span></h4>
+    <h4>IP Address<span><%=  ipAddr %></span></h4>
     <h4>JVM Name Old: <span><%=  serverName %></span></h4>
     <h4> Date & Time Old: <span> <%= Dtime %></h4>
 </div>
